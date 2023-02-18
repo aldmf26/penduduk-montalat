@@ -1,5 +1,5 @@
-## Surat Disposisi
-<p><b>PKL NISA</b></p>
+## WEB KEPENDUDUKAN
+<p><b>Aplikasi Kependudukan Montalat</b></p>
 
 ## Setup
 - rename file .env.example dengan .env
@@ -13,5 +13,5 @@
 - php artisan db:seed
 
 # Login
-email : nisa@gmail.com
+email : arsad@gmail.com
 pw : password

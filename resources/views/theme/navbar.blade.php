@@ -54,7 +54,7 @@
                 </li>
                 @php
                     $req = [
-                        'surat_masuk', 'surat_keluar', 'divisi', 'surat_disposisi', 'jenis_surat'
+                        'penduduk', 'kk', 'divisi', 'surat_disposisi', 'jenis_surat'
                     ];
                 @endphp
                 <li class="sidebar-item  has-sub {{Request::is($req) ? 'active' : ''}}">
@@ -66,7 +66,8 @@
                     <ul class="submenu {{Request::is($req) ? 'active' : ''}}">
                         
                         <li class="submenu-item {{ Request::is('surat_masuk') ? 'active' : '' }}">
-                            <a href="{{ route('dashboard') }}">Surat Masuk</a>
+                          <a href="{{ route('penduduk') }}">Data Penduduk</a>
+                            <a href="{{ route('kk') }}">Data KK</a>
                         </li>
                         
                       </li>

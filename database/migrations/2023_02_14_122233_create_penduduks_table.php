@@ -20,8 +20,6 @@ class CreatePenduduksTable extends Migration
             $table->enum('j_kelamin',['pria','wanita']);
             $table->string('agama');
             $table->string('gol_darah');
-            $table->string('nm_ayah');
-            $table->string('nm_ibu');
             $table->string('alamat');
             $table->string('no_hp');
             $table->string('tmpt_lahir');

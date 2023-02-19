@@ -28,7 +28,7 @@
 
     {{-- toast --}}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.0/css/toastr.css" rel="stylesheet" />
-
+    <script src="//unpkg.com/alpinejs" defer></script>
     <style>
         .modal-lg-max {
             min-width: 1200px;

@@ -100,18 +100,6 @@
                                     <input required type="text" name="gol_darah" class="form-control">
                                 </div>
                             </div>
-                            <div class="col-lg-2">
-                                <div class="form-group">
-                                    <label for="">Nama Ayah</label>
-                                    <input type="text" name="nm_ayah" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-lg-2">
-                                <div class="form-group">
-                                    <label for="">Nama Ibu</label>
-                                    <input type="text" name="nm_ibu" class="form-control">
-                                </div>
-                            </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <label for="">Alamat</label>
@@ -246,20 +234,6 @@
                                             class="form-control">
                                     </div>
                                 </div>
-                                <div class="col-lg-2">
-                                    <div class="form-group">
-                                        <label for="">Nama Ayah</label>
-                                        <input value="{{ $d->nm_ayah }}" type="text" name="nm_ayah"
-                                            class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-lg-2">
-                                    <div class="form-group">
-                                        <label for="">Nama Ibu</label>
-                                        <input value="{{ $d->nm_ibu }}" type="text" name="nm_ibu"
-                                            class="form-control">
-                                    </div>
-                                </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label for="">Alamat</label>
@@ -365,15 +339,15 @@
                     </div>
                     <div class="modal-body">
                         @php
+                            $umur = date_diff(date_create($d->tgl_lahir), date_create('today'))->y;
                             $detail = [
                                 'No KTP' => $d->no_ktp,
                                 'Nama Lengkap' => $d->nama,
+                                'Umur' => "$umur Tahun",
                                 'Kelamin' => $d->j_kelamin,
                                 'Kelamin' => $d->j_kelamin,
                                 'Agama' => $d->agama,
                                 'Gol Darah' => $d->gol_darah,
-                                'Nama Ayah' => $d->nm_ayah,
-                                'Nama Ibu' => $d->nm_ibu,
                                 'Alamat' => $d->alamat,
                                 'No HP' => $d->no_hp,
                                 'Tempat Lahir' => $d->tmpt_lahir,

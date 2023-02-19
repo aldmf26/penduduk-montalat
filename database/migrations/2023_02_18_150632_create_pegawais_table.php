@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKksTable extends Migration
+class CreatePegawaisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,15 @@ class CreateKksTable extends Migration
      */
     public function up()
     {
-        Schema::create('kks', function (Blueprint $table) {
+        Schema::create('pegawais', function (Blueprint $table) {
             $table->id();
-            $table->string('no_kk');
-            $table->string('no_hp');
+            $table->string('nik');
+            $table->string('nama');
             $table->string('alamat');
-            $table->integer('jml_keluarga');
-            $table->date('tgl_terbit');
+            $table->string('no_hp');
+            $table->string('jabatan');
+            $table->date('tgl_lahir');
+            $table->date('tgl');
             $table->timestamps();
         });
     }
@@ -31,6 +33,6 @@ class CreateKksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kks');
+        Schema::dropIfExists('pegawais');
     }
 }

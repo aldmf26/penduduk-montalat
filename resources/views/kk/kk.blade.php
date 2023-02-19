@@ -17,8 +17,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>No KK</th>
-                                    <th>No KTP</th>
-                                    <th>Nama Kepala Keluarga</th>
+                                    <th>Alamat</th>
                                     <th>Tgl Terbit</th>
                                     <th class="text-center">Aksi</th>
                                 </tr>
@@ -28,8 +27,7 @@
                                     <tr>
                                         <td>{{ $no + 1 }}</td>
                                         <td>{{ $d->no_kk }}</td>
-                                        <td>{{ $d->no_ktp }}</td>
-                                        <td>{{ ucwords($d->nm_kepala_keluarga) }}</td>
+                                        <td>{{ ucwords($d->alamat) }}</td>
                                         <td>{{ tanggal($d->tgl_terbit) }}</td>
                                         <td align="center">
                                             <a data-bs-toggle="modal" data-bs-target="#modal-detail{{ $d->id }}"
@@ -55,7 +53,7 @@
     {{-- modal tambah --}}
     <div class="modal fade text-left" id="modal-tambah" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
         aria-hidden="true">
-        <div class="modal-dialog modal-lg-max" role="document">
+        <div class="modal-dialog modal-md" role="document">
             <form action="{{ route('tambah_kk') }}" enctype="multipart/form-data" method="post">
                 @csrf
                 <div class="modal-content">
@@ -69,43 +67,25 @@
                     </div>
                     <div class="modal-body">
                         <div class="row">
-                            <div class="col-lg-2">
+                            <div class="col-lg-12">
                                 <div class="form-group">
                                     <label for="">No KK</label>
                                     <input required type="text" name="no_kk" class="form-control">
                                 </div>
                             </div>
-                            <div class="col-lg-2">
-                                <div class="form-group">
-                                    <label for="">No KTP</label>
-                                    <input required type="text" name="no_ktp" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="form-group">
-                                    <label for="">Nama Kepala Keluarga</label>
-                                    <input required type="text" name="nm_kepala_keluarga" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-12">
                                 <div class="form-group">
                                     <label for="">Alamat</label>
                                     <input type="text" name="alamat" class="form-control">
                                 </div>
                             </div>
-                            <div class="col-lg-2">
+                            <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="">No HP</label>
                                     <input type="text" name="no_hp" class="form-control">
                                 </div>
                             </div>
-                            <div class="col-lg-2">
-                                <div class="form-group">
-                                    <label for="">Jumlah Keluarga</label>
-                                    <input required type="text" name="jml_keluarga" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-lg-2">
+                            <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="">Tgl Terbit</label>
                                     <input required type="date" name="tgl_terbit" class="form-control">
@@ -134,7 +114,7 @@
     @foreach ($datas as $d)
     <div class="modal fade text-left" id="modal-edit{{$d->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
         aria-hidden="true">
-        <div class="modal-dialog modal-lg-max" role="document">
+        <div class="modal-dialog modal-md" role="document">
             <form action="{{ route('edit_kk') }}" enctype="multipart/form-data" method="post">
                 @csrf
                 <div class="modal-content">
@@ -148,44 +128,26 @@
                     </div>
                     <div class="modal-body">
                         <div class="row">
-                            <div class="col-lg-2">
+                            <div class="col-lg-12">
                                 <input type="hidden" name="id" value="{{ $d->id }}">
                                 <div class="form-group">
                                     <label for="">No KK</label>
                                     <input value="{{ $d->no_kk }}" required type="text" name="no_kk" class="form-control">
                                 </div>
                             </div>
-                            <div class="col-lg-2">
-                                <div class="form-group">
-                                    <label for="">No KTP</label>
-                                    <input value="{{ $d->no_ktp }}" required type="text" name="no_ktp" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="form-group">
-                                    <label for="">Nama Kepala Keluarga</label>
-                                    <input value="{{ $d->nm_kepala_keluarga }}" required type="text" name="nm_kepala_keluarga" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-12">
                                 <div class="form-group">
                                     <label for="">Alamat</label>
-                                    <input value="{{ $d->no }}" type="text" name="alamat" class="form-control">
+                                    <input value="{{ $d->alamat }}" type="text" name="alamat" class="form-control">
                                 </div>
                             </div>
-                            <div class="col-lg-2">
+                            <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="">No HP</label>
                                     <input value="{{ $d->alamat }}" type="text" name="no_hp" class="form-control">
                                 </div>
                             </div>
-                            <div class="col-lg-2">
-                                <div class="form-group">
-                                    <label for="">Jumlah Keluarga</label>
-                                    <input value="{{ $d->jml_keluarga }}" required type="text" name="jml_keluarga" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-lg-2">
+                            <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="">Tgl Terbit</label>
                                     <input value="{{ $d->tgl_terbit }}" required type="date" name="tgl_terbit" class="form-control">
@@ -211,12 +173,11 @@
     </div>
     @endforeach
     
-    {{-- modal detail --}}
     {{-- view detail --}}
     @foreach ($datas as $d)
         <div class="modal fade text-left" id="modal-detail{{ $d->id }}" tabindex="-1" role="dialog"
             aria-labelledby="myModalLabel1" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-dialog modal-md" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="myModalLabel1">
@@ -231,12 +192,9 @@
                         @php
                             $detail = [
                                 'No KK' => $d->no_kk,
-                                'No KTP' => $d->no_ktp,
-                                'Nama Kepala Keluarga' => $d->nm_kepala_keluarga,
                                 'Alamat' => $d->alamat,
                                 'No HP' => $d->no_hp,
                                 'Tgl Terbit' => $d->tgl_terbit,
-                                'Jumlah Keluarga' => $d->jml_keluarga,
                             ];
                         @endphp
                         <table class="table">

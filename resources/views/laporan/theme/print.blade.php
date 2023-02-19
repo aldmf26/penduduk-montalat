@@ -1,29 +1,3 @@
-@php
-    function tgl_indo($tanggal)
-    {
-        $bulan = [
-            1 => 'Januari',
-            'Februari',
-            'Maret',
-            'April',
-            'Mei',
-            'Juni',
-            'Juli',
-            'Agustus',
-            'September',
-            'Oktober',
-            'November',
-            'Desember',
-        ];
-        $pecahkan = explode('-', $tanggal);
-    
-        // variabel pecahkan 0 = tanggal
-        // variabel pecahkan 1 = bulan
-        // variabel pecahkan 2 = tahun
-    
-        return $pecahkan[2] . ' ' . $bulan[(int) $pecahkan[1]] . ' ' . $pecahkan[0];
-    }
-@endphp
 <html xmlns="http://www.w3.org/1999/xhtml">
 <!-- Bagian halaman HTML yang akan konvert -->
 
@@ -116,16 +90,16 @@
 <body>
     <div class="container">
         <p>
-            <img style="float: left; max-width: 100%;" src="https://pn-banjarmasin.go.id/images/Galeri/Logo/1_logo-bjm.png" alt=""
+            <img style="float: left; max-width: 100%;" src="/upload/logo.png" alt=""
                 width="90" height="90">
         </p>
         <div id="title" style="font-size: 30px;">
-            PENGADILAN NEGERI BANJARMASIN
+            PEMERINTAH KABUPATEN BARITO UTARA
         </div>
-        <p style="margin-top: 2px;" align="center"><i>Jalan Mayjend Jl. D. I. Panjaitan No.27 70114
-                <br>Banjarmasin
+        <p style="margin-top: 2px;" align="center"><i> jl.H.Hadreng RT 004 Kelurahan Montallat II Kode Pos 73861
+                <br>KECAMATAN MONTALLAT
                 Prov.
-                Kalimantan Selatan. HP : +62 511 3352859</i></p>
+                Kalimantan Tengah. HP : +62 511 3352859</i></p>
         <hr><br>
         <div id="title">
             {{ $title }}
@@ -138,7 +112,7 @@
             Banjarmasin, {{ tanggal(date('Y-m-d')) }}
         </div>
         <div id="footer-jabatan">
-            Ketua Pengadilan
+            Lurah Montallat II
         </div>
         <style>
             .ttd {
@@ -151,7 +125,7 @@
             <img width="500" height="140" src="{{ asset('upload/ttd2.png') }}" alt="">
         </div> --}}
         <div id="footer-nama">
-            Rustanto S.H.,M.H
+            Lambarman
         </div>
     </div>
 </body>

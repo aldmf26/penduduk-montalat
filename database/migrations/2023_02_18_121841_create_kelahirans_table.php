@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKksTable extends Migration
+class CreateKelahiransTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateKksTable extends Migration
      */
     public function up()
     {
-        Schema::create('kks', function (Blueprint $table) {
+        Schema::create('kelahirans', function (Blueprint $table) {
             $table->id();
-            $table->string('no_kk');
-            $table->string('no_hp');
-            $table->string('alamat');
-            $table->integer('jml_keluarga');
-            $table->date('tgl_terbit');
+            $table->integer('penduduk_id');
+            $table->string('nama');
+            $table->string('tmpt_lahir');
+            $table->date('tgl_lahir');
+            $table->time('jam');
+            $table->enum('j_kelamin', ['pria', 'wanita']);
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ class CreateKksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kks');
+        Schema::dropIfExists('kelahirans');
     }
 }

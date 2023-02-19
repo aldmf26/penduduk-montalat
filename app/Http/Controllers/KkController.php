@@ -20,11 +20,9 @@ class KkController extends Controller
     {
         $data = [
             'no_kk' => $r->no_kk,
-            'no_ktp' => $r->no_ktp,
-            'nm_kepala_keluarga' => $r->nm_kepala_keluarga,
             'alamat' => $r->alamat,
             'no_hp' => $r->no_hp,
-            'jml_keluarga' => $r->jml_keluarga,
+            'jml_keluarga' => 0,
             'tgl_terbit' => $r->tgl_terbit,
         ];
         Kk::create($data);
@@ -35,11 +33,9 @@ class KkController extends Controller
     {
         $data = [
             'no_kk' => $r->no_kk,
-            'no_ktp' => $r->no_ktp,
-            'nm_kepala_keluarga' => $r->nm_kepala_keluarga,
             'alamat' => $r->alamat,
             'no_hp' => $r->no_hp,
-            'jml_keluarga' => $r->jml_keluarga,
+            'jml_keluarga' => 0,
             'tgl_terbit' => $r->tgl_terbit,
         ];
         Kk::find($r->id)->update($data);
